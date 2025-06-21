@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Heart's Journey While Waiting For You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .dancing-font {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .page-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      transition: background 0.6s ease-in-out;
+    }
+
+    /* Backgrounds per scroll section */
+    .section-1 {
+      background: linear-gradient(135deg, #fff0f5, #ffe4e1);
+    }
+
+    .section-2 {
+      background: linear-gradient(to bottom, #fef9ff, #ffe6fa);
+    }
+
+    .section-3 {
+      background: linear-gradient(to bottom, #f0f8ff, #e0ffff);
+    }
+
+    .section-4 {
+      background: linear-gradient(to bottom, #f9f6ff, #f4e1ff);
+    }
+
+    .section-5 {
+      background: linear-gradient(to bottom, #fffbe7, #ffe6cc);
+    }
+
+    .heartbeat {
+      animation: heartbeat 1.5s ease-in-out infinite both;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 3px solid #ff66cc;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 2px;
+      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff66cc; }
+    }
+
+    .btn-romantic {
+      background: linear-gradient(45deg, #ff66cc, #cc99ff);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 102, 204, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-romantic:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(255, 102, 204, 0.6);
+    }
+
+    .btn-romantic:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <section class="page-section section-1 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 dancing-font text-pink-600 heartbeat">My Heart's Journey</h1>
+      <h2 class="text-3xl md:text-4xl mb-8 dancing-font text-purple-500">While Waiting For You, Ronu</h2>
+      <div class="typewriter text-xl mb-12">
+        <p>Every day brings me closer to you...</p>
+      </div>
+      <button onclick="scrollToSection('day-counter')" class="btn-romantic mx-auto">
+        Begin Our Story <i class="fas fa-arrow-down ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Day Counter -->
+  <section id="day-counter" class="page-section section-2">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 dancing-font text-pink-500">Counting The Days</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
+        You asked me to wait for a month before we talk again. Each day has been filled with thoughts of you.
+      </p>
+
+      <div class="flex flex-wrap justify-center mb-12" id="calendar-days">
+        <!-- Calendar days generated via JS -->
+      </div>
+
+      <button onclick="scrollToSection('feelings')" class="btn-romantic mx-auto">
+        My Feelings <i class="fas fa-heart ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Feelings Section -->
+  <section id="feelings" class="page-section section-3">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 dancing-font text-center text-purple-600">What I Felt While Waiting</h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition hover:scale-105">
+          <div class="text-pink-500 text-4xl mb-4"><i class="fas fa-sun"></i></div>
+          <h3 class="text-xl font-bold mb-3 text-pink-600">Morning Thoughts</h3>
+          <p class="text-gray-700">Each morning I wake up wondering if today might be the day you reach out.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg transform transition hover:scale-105">
+          <div class="text-purple-500 text-4xl mb-4"><i class="fas fa-moon"></i></div>
+          <h3 class="text-xl font-bold mb-3 text-purple-600">Nighttime Longing</h3>
+          <p class="text-gray-700">Nights are the hardest. My mind replays our memories together.</p>
+        </div>
+      </div>
+      <button onclick="scrollToSection('confession')" class="btn-romantic mx-auto block">
+        My Confession <i class="fas fa-comment ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Confession Section -->
+  <section id="confession" class="page-section section-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 dancing-font text-pink-600">My Heart's Truth</h2>
+      <div class="bg-white rounded-xl p-8 mb-8 shadow-lg max-w-2xl mx-auto">
+        <p class="text-lg mb-4">
+            My dearest Ronak,
+        </p>
+        <p class="text-lg mb-4">
+            This month of waiting has been both beautiful and painful. Beautiful because it's given me time to reflect on my feelings for you. Painful because every moment away from you feels like an eternity.
+        </p>
+        <p class="text-lg mb-4">
+            I've come to realize that what I feel for you isn't just attraction or infatuation. It's something deeper, something timeless. I love you - completely, truly, and without reservation.
+        </p>
+        <p class="text-lg mb-4">
+            You've become the first thought in my morning and the last wish in my night. Your smile is my favorite sight, your voice my favorite sound.
+        </p>
+        <p class="text-lg mb-4 font-bold text-pink-600">
+            I'm in love with you, and I want to spend my life showing you just how much.
+        </p>
+    </div>
+
+      <button onclick="scrollToSection('proposal')" class="btn-romantic mx-auto">
+        My Promise <i class="fas fa-gem ml-2"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Proposal Section -->
+  <section id="proposal" class="page-section section-5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 dancing-font text-purple-600">When We Meet Again</h2>
+      <p class="text-lg mb-6">When I come to India, I want our reunion to be magical...</p>
+      <button id="date-btn" class="btn-romantic text-2xl px-8 py-4 heartbeat">
+        Will You Go On A Date With Me? <i class="fas fa-heart ml-4"></i>
+      </button>
+    </div>
+  </section>
+
+  <footer class="bg-purple-900 text-white py-8 text-center">
+    <p class="dancing-font text-2xl mb-2">With all my love,</p>
+    <p class="text-xl">Anuj</p>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script>
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function generateCalendar() {
+      const container = document.getElementById('calendar-days');
+      const totalDays = 30;
+      const currentDay = 10;
+      for (let i = 1; i <= totalDays; i++) {
+        const el = document.createElement('div');
+        el.className = 'calendar-day p-3 m-2 rounded-full bg-white shadow text-sm';
+        el.textContent = i;
+        if (i < currentDay) el.classList.add('text-gray-400');
+        else if (i === currentDay) el.classList.add('bg-pink-400', 'text-white', 'font-bold');
+        else el.classList.add('text-gray-700');
+        container.appendChild(el);
+      }
+    }
+
+    generateCalendar();
+  </script>
+</body>
+</html>
